@@ -3,18 +3,20 @@
 # An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
 # typically using all the original letters exactly once.
 
+
 def is_anagram(s: str, t: str) -> bool:
-    i = 0
-    j = len(s)-1
-    if len(s.strip()) != len(t.strip()):
+    if len(s) != len(t):
         return False
-    for c in s:
-        if c == t[j]:
-            j -= 1
-        return True
-    return False
+    for char in t:
+        if char in s:
+            s.replace(char, "", 1)
+        else:
+            return False
+    return True
 
-s = "kayak"
-t = "kayak"
 
-print(is_anagram(s, t))
+word_one = "cat"  # "nagaram"
+word_two = "car"  # "anagram"
+
+
+print(is_anagram(word_one, word_two))
