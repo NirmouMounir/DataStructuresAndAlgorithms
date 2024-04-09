@@ -5,11 +5,12 @@
 
 
 def is_anagram(s: str, t: str) -> bool:
-    if len(s) != len(t):
+    my_string = s
+    if len(my_string) != len(t):
         return False
     for char in t:
-        if char in s:
-            s.replace(char, "", 1)
+        if char in my_string:
+            my_string.replace(char, "", 1)
         else:
             return False
     return True
